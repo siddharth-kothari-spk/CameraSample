@@ -44,6 +44,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="button" destination="Bio-G7-pGM" id="PQr-Nw-Eps"/>
                         <outlet property="imageView" destination="Ghd-Ao-DVy" id="uVU-XP-2Vb"/>
                     </connections>
                 </viewController>
