@@ -14,6 +14,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        button.backgroundColor = .systemBlue
+        button.setTitle("Click picture", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        
+        imageView.backgroundColor = .secondarySystemBackground
     }
 
     @IBAction func cameraButtonClicked(_ sender: Any) {
