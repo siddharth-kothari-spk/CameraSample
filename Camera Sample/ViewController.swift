@@ -22,8 +22,26 @@ class ViewController: UIViewController {
     }
 
     @IBAction func cameraButtonClicked(_ sender: Any) {
-        
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .camera
+        imagePicker.delegate = self
+        present(imagePicker, animated: false)
     }
     
 }
 
+
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            return
+        }
+        imageView.image = image
+    }
+}
